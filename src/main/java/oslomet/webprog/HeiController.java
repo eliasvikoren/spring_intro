@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HeiController {
     @GetMapping("/")
     public String hei(String navn) {
-        return "Hei verden !" + navn;
+        return "Hei verden, " + navn+"!";
     }
 }
