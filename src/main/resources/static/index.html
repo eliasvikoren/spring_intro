@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<h1>Kunde</h1>
+
+Skriv inn navnet:
+<input type="text" id="navn">
+
+Skriv inn adressen:
+<input type="text" id="adresse">
+
+<button onclick="hentData()">Hent data</button>
+
+Fornavn: <span id="utNavn"></span>
+Adresse: <span id="utAdresse"></span>
+
+<script type="application/javascript">
+
+    function hentData(){
+        const kunde = {
+            navn : $('#navn').val(),
+            adresse : $('#adresse').val(),
+        }
+
+        const url = "/";
+
+        $.get(url, kunde, function(data){
+            $('#utNavn').html(data.navn);
+            $('#utAdresse').html(data.adresse);
+        });
+    }
+
+
+</script>
+
+</body>
+</html>
